@@ -10,15 +10,13 @@ var requestAnimId = 0;
 var targetFrameRate = 10;
 var lastFrameTime = window.performance.now();
 
-
 function draw() {
   var now = window.performance.now();
   var then = now - lastFrameTime;
   var interval = 1000.0 / targetFrameRate;
   var epsilon = 5;
 
-  if (!loop ||
-    then >= interval - epsilon) {
+  if (!loop || then >= interval - epsilon) {
 
     redraw();
 
