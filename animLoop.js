@@ -4,7 +4,7 @@ var width = canvas.width = 400;
 var height = canvas.height = 400;
 
 context.fillStyle = 'grey';
-context.fillRect(0,0,width, height);
+context.fillRect(0, 0, width, height);
 
 var pSize = 20;
 var xOff = 0;
@@ -43,7 +43,7 @@ function redraw() {
     yOff += pSize;
   }
   context.fillStyle = 'black';
-  context.fillRect(xOff,yOff,pSize,pSize);
+  context.fillRect(xOff, yOff, pSize, pSize);
   xOff += pSize;
 }
 
