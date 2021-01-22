@@ -21,7 +21,7 @@ function draw() {
     redraw();
 
     var frameRate = 1000.0 / (now - lastFrameTime);
-    var deltaTime = now - lastFrameTime;
+    //var deltaTime = now - lastFrameTime;
     lastFrameTime = now;
   }
   if (loop) {
