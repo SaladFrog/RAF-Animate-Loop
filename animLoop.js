@@ -4,6 +4,7 @@ var width = canvas.width = 400;
 var height = canvas.height = 400;
 
 var xOff = 0;
+var yOff = 0;
 
 var loop = true;
 var requestAnimId = 0;
@@ -29,7 +30,11 @@ function draw() {
 }
 
 function redraw() {
-  context.fillRect(xOff,0,5,5);
+  if(xOff === width) {
+    xOff = 0;
+    yOff += 5;
+  }
+  context.fillRect(xOff,yOff,5,5);
   xOff += 5;
 }
 
