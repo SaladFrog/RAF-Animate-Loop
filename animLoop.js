@@ -3,12 +3,13 @@ var context = canvas.getContext('2d');
 var width = canvas.width = 400;
 var height = canvas.height = 400;
 
+var pSize = 20;
 var xOff = 0;
 var yOff = 0;
 
 var loop = true;
 var requestAnimId = 0;
-var targetFrameRate = 10;
+var targetFrameRate = 30;
 var lastFrameTime = window.performance.now();
 
 function draw() {
@@ -30,12 +31,16 @@ function draw() {
 }
 
 function redraw() {
+  if(xOff === width - pSize && yOff === height - pSize) {
+    loop = false;
+    window.cancelAnimationFrame(requestAnimId);
+  }
   if(xOff === width) {
     xOff = 0;
-    yOff += 5;
+    yOff += pSize;
   }
-  context.fillRect(xOff,yOff,5,5);
-  xOff += 5;
+  context.fillRect(xOff, yOff, pSize, pSize);
+  xOff += pSize;
 }
 
 draw();
