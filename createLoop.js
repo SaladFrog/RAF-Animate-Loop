@@ -19,10 +19,6 @@ class Loop {
   constructor(callBack, frameRate) {
     this.nEvent = new EventEmitter();
 
-    if (!(this instanceof Loop)) {
-      return new Loop(callBack);
-    }
-
     this._loop = true;
     this._requestAnimId = 0;
     this._targetFrameRate = frameRate || 60;
@@ -57,7 +53,6 @@ class Loop {
     const epsilon = 5;
 
     if (!this._loop || then >= frameInterval - epsilon) {
-      //   this._frameRate = 1000.0 / (rightNow - this._lastFrameTime);
       this.deltaTime = rightNow - this._lastFrameTime;
       this.nEvent.emit("tick", this.deltaTime);
       this._lastFrameTime = rightNow;
