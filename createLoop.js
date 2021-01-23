@@ -13,7 +13,7 @@ import raf from "raf";
 *    loop.stop();
 *  }
 *}, 30).start();
-
+*/
 
 class Loop {
   constructor(callBack, frameRate) {
